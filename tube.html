@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>illuminates Your World</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="https://i.ibb.co/529vkCB/images-1-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #000000;
+            background-color: #c9c9c9;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.527);
+            /* Transparent background */
+            position: absolute;
+            /* Positioned over the hero section */
+            width: 100%;
+            /* Full width */
+            top: 0;
+            /* Align at the top */
+            z-index: 10;
+            /* On top of hero section */
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-bottom: 0.25px solid rgb(0, 0, 0);
+        }
+
+        .sec-nav {
+            position: absolute;
+            top: 80px;
+            width: 100%;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            width: 80%;
+        }
+
+        .search-wrapper .form-control {
+            background-color: #0707078c;
+            border: 1px solid #444;
+            color: #ccc;
+            padding-right: 40px;
+            padding-left: 40px;
+            border-radius: 0;
+        }
+
+        .search-wrapper .form-control::placeholder {
+            color: #ccc;
+        }
+
+        .search-wrapper .fa-magnifying-glass {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+        }
+
+        .search-wrapper .fa-barcode {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            border: 1px solid #444;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .dropdown-menu {
+            min-width: 100px;
+        }
+
+        .navbar .nav-link {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #ffffff;
+            border-bottom: 0.5px solid #ffffff;
+            padding-bottom: 8px;
+        }
+
+        .navbar-toggler {
+            border-color: #555;
+        }
+
+        .navbar-toggler-icon {
+            color: #fff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767.98px) {
+            .navbar-brand {
+                order: 1;
+                margin-right: auto;
+            }
+
+            .navbar-toggler {
+                order: 2;
+                margin-left: auto;
+            }
+
+            .navbar-center {
+                order: 3;
+                flex-grow: 1;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .navbar-collapse {
+                order: 4;
+                text-align: start;
+            }
+
+            .search-wrapper {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .nav-item {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+
+
+
+        .contact {
+            position: fixed;
+            bottom: 20px;
+            /* Distance from the bottom */
+            right: 20px;
+            /* Distance from the right */
+            background-color: #000000 !important;
+            /* Customize as needed */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            z-index: 1050;
+            /* Ensure it appears above other content */
+
+        }
+
+
+        .main-img-nav {
+            display: flex;
+            align-items: center;
+            /* Vertically center */
+            justify-content: center;
+            /* Horizontally center */
+            background-image: url(https://wallpapercave.com/wp/wp13509901.jpg);
+            width: 100%;
+            height: 40vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .alert {
+            width: 90%;
+            /* Adjust width as needed */
+            margin-top: 150px;
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            color: #ffffff !important;
+            /* Text color for contrast */
+            border: 1px solid #555;
+            /* Border color (optional) */
+            border-radius: 5px;
+            /* Rounded corners (optional) */
+        }
+
+
+
+        .main {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .main1 {
+            width: 350px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        .heading {
+            width: 90%;
+            text-align: center;
+            color: black;
+            background: radial-gradient(circle, #bbbbbb 0%, #ffffff 100%);
+            border-radius: 30px 0px 30px 0px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 15px;
+        }
+
+
+        .main1:hover .heading {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .select {
+            width: 90%;
+            height: 50px;
+            font-size: large;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            border: 0.25px solid rgb(168, 168, 168);
+        }
+
+        .select:hover {
+            color: rgb(37, 37, 37);
+        }
+
+        .main-select {
+            border: 0.25px solid rgb(255, 255, 255);
+            width: 90%;
+            height: 280px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 17px;
+        }
+
+        .main-select:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .slctt {
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .slct {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+
+        .filter-sidebar {
+            width: 95%;
+            border-radius: 10px;
+            height: 880px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 15px;
+        }
+
+        .filter-sidebar:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-sidebar:hover .heading {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-section h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: rgb(0, 0, 0);
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+
+
+        .filter-sidebar:hover h3 {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        .filter-section label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: rgb(36, 36, 36);
+        }
+
+
+        .filter-section input[type="radio"] {
+            margin-right: 10px;
+            margin-left: 40px;
+        }
+
+        .filter-section .slider {
+            width: 70%;
+            margin-left: 40px;
+        }
+
+        .filter-section span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            margin-left: 40px;
+        }
+
+
+
+
+        .main2 {
+            width: 70%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            border-radius: 10px;
+        }
+
+
+        .panel-img {
+            width: 100%;
+            height: 300px;
+            background-image: url(https://cdn.leonardo.ai/users/c6b8a8be-a8f2-4e82-aac7-e796197b94d7/generations/62f07f67-e3fe-42b2-9033-28918c4f0af8/Leonardo_Phoenix_Create_a_modern_and_professional_About_Us_ima_2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-panel-img:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-panel-img {
+            border: 1px solid rgb(0, 0, 0);
+            width: 100%;
+            height: 300px;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .product-sort {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            color: white;
+            margin-top: 40px;
+            background: rgb(92, 90, 90);
+            background: linear-gradient(90deg, rgba(92, 90, 90, 1) 14%, rgb(177, 177, 177) 100%);
+        }
+
+        .product-sort p {
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+
+        .product-sort select {
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 660px) {
+            .product-sort {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .product-sort p {
+                margin-bottom: 10px;
+            }
+
+            .product-sort .form-inline {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-sort .form-inline select,
+            .product-sort .form-inline button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .product-sort .form-inline button {
+                margin-bottom: 0;
+            }
+        }
+
+
+
+        .product-card {
+            background-color: #dfdfdf;
+            /* Light background color */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge-new {
+            background-color: #ff9900;
+            /* Customize color to match your theme */
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            font-size: 1.125rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-rating {
+            font-size: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.125rem;
+            color: #ff9900;
+            /* Customize color to match your theme */
+        }
+
+        .product-price del {
+            color: #999;
+            margin-right: 5px;
+        }
+
+        /* PDF Download Button Styling */
+        .btn-download {
+            margin-top: auto;
+            /* Push button to the bottom of the card */
+            color: #000000 !important;
+            font-size: 1.5rem !important;
+            border-radius: 5px !important;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-download:hover {
+            border: 0.5px solid black !important;
+            color: #424242 !important;
+        }
+
+        /* Image Styling */
+        .product-card img {
+            height: 200px;
+            /* Fixed height for images */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the fixed height */
+            width: 100%;
+            /* Ensure the image covers the full width of the card */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .product-card {
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        .pagination-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgb(39, 39, 39);
+
+            margin-bottom: 20px;
+            color: white;
+            background: rgb(92, 90, 90);
+            background: linear-gradient(90deg, rgba(92, 90, 90, 1) 14%, rgb(177, 177, 177) 100%);
+            border-radius: 10px;
+        }
+
+        .pagination-container p {
+            padding: 1em;
+            margin: 0;
+        }
+
+        .pagination-custom .page-item.active .page-link {
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(0, 0, 0);
+        }
+
+        .pagination-custom .page-item .page-link {
+            color: black;
+            background-color: white;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+
+        .f-button {
+            display: none;
+        }
+
+
+
+        @media(max-width: 1200px) {
+            .main2 {
+                width: 100%;
+            }
+
+            .main1 {
+                display: none;
+            }
+
+            .f-button {
+                display: block;
+            }
+
+            #filterSection {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: -400px;
+                background-color: rgb(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid black;
+                border-radius: 30px;
+                z-index: 9999;
+                padding: 20px;
+                width: 380px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                overflow-y: auto;
+            }
+
+            #filterSection.show {
+                left: 0;
+            }
+
+            .main {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            .main1 {
+                width: 350px;
+                background-color: rgba(207, 207, 207, 0.226);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 10px;
+            }
+
+            .heading {
+                width: 90%;
+                text-align: center;
+                color: black;
+                background: radial-gradient(circle, #bbbbbb 0%, #ffffff 100%);
+                border-radius: 30px 0px 30px 0px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                margin-left: 15px;
+            }
+
+
+            .main1:hover .heading {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .select {
+                width: 90%;
+                height: 50px;
+                font-size: large;
+                background-color: transparent;
+                color: rgb(0, 0, 0);
+                border: 0.25px solid rgb(0, 0, 0);
+            }
+
+            .select:hover {
+                color: rgb(22, 22, 22);
+            }
+
+            .main-select {
+                border: 0.25px solid rgb(255, 255, 255);
+                width: 90%;
+                height: 280px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-left: 17px;
+            }
+
+            .main-select:hover {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .slctt {
+                border-radius: 0px 0px 10px 10px;
+            }
+
+            .slct {
+                border-radius: 10px 10px 0px 0px;
+            }
+
+
+            .filter-sidebar {
+                width: 90%;
+                border-radius: 10px;
+                height: 880px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 15px;
+            }
+
+            .filter-sidebar:hover {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .filter-sidebar:hover .heading {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .filter-section h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: rgb(0, 0, 0);
+                margin-left: 40px;
+                margin-top: 10px;
+            }
+
+
+            .filter-sidebar:hover h3 {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+                color: black;
+            }
+
+            .filter-section label {
+                display: block;
+                font-size: 14px;
+                font-weight: 700;
+                color: rgb(36, 36, 36);
+            }
+
+
+            .filter-section input[type="radio"] {
+                margin-right: 10px;
+                margin-left: 40px;
+            }
+
+            .filter-section .slider {
+                width: 70%;
+                margin-left: 40px;
+            }
+
+            .filter-section span {
+                display: block;
+                margin-top: 5px;
+                font-size: 14px;
+                margin-left: 40px;
+            }
+        }
+
+
+
+
+
+
+
+        .footer-section {
+            background-color: #85858534;
+            color: #ffffff;
+            background-image: url('https://www.euchips.com/uploads/footer_bg.jpg');
+            /* Parallax background image */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            /* Adjust as needed */
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section {
+            background-color: #b4b4b477;
+            color: #000000;
+            padding-top: 40px;
+            /* Increase space from the content above */
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section h2 {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .newsletter-section .form-control {
+            border-radius: 0;
+            border: 2px solid #000000;
+        }
+
+        .newsletter-section .btn-primary {
+            background-color: #000000;
+            border: none;
+            border-radius: 0;
+            color: #ffffff;
+        }
+
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #dcdcdc;
+        }
+
+        .footer-section ul {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-section .list-inline {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        .footer-section .list-inline i {
+            font-size: 24px;
+            /* Consistent icon size */
+        }
+
+        .footer-section .d-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section .text-center img {
+            margin-bottom: 20px;
+        }
+
+        .footer-section .text-start {
+            text-align: left;
+        }
+
+        .footer-section .text-end {
+            text-align: right;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .footer-section .col-md-4 {
+                text-align: start;
+                margin-bottom: 20px;
+            }
+
+            .newsletter-section {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+        /* Loader CSS */
+        .🤚 {
+            --skin-color: #E4C560;
+            --tap-speed: 0.6s;
+            --tap-stagger: 0.1s;
+            position: fixed;
+            /* Change to fixed to keep loader in view */
+            top: 50%;
+            /* Center vertically */
+            left: 50%;
+            /* Center horizontally */
+            transform: translate(-50%, -50%);
+            /* Adjust centering */
+            width: 80px;
+            height: 60px;
+        }
+
+        .🤚:before {
+            content: '';
+            display: block;
+            width: 180%;
+            height: 75%;
+            position: absolute;
+            top: 70%;
+            right: 20%;
+            background-color: black;
+            border-radius: 40px 10px;
+            filter: blur(10px);
+            opacity: 0.3;
+        }
+
+        .🌴 {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--skin-color);
+            border-radius: 10px 40px;
+        }
+
+        .👍 {
+            position: absolute;
+            width: 120%;
+            height: 38px;
+            background-color: var(--skin-color);
+            bottom: -18%;
+            right: 1%;
+            transform-origin: calc(100% - 20px) 20px;
+            transform: rotate(-20deg);
+            border-radius: 30px 20px 20px 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .👍:after {
+            width: 20%;
+            height: 60%;
+            content: '';
+            background-color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            bottom: -8%;
+            left: 5px;
+            border-radius: 60% 10% 10% 30%;
+            border-right: 2px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .👉 {
+            position: absolute;
+            width: 80%;
+            height: 35px;
+            background-color: var(--skin-color);
+            bottom: 32%;
+            right: 64%;
+            transform-origin: 100% 20px;
+            animation-duration: calc(var(--tap-speed) * 2);
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            transform: rotate(10deg);
+        }
+
+        .👉:before {
+            content: '';
+            position: absolute;
+            width: 140%;
+            height: 30px;
+            background-color: var(--skin-color);
+            bottom: 8%;
+            right: 65%;
+            transform-origin: calc(100% - 20px) 20px;
+            transform: rotate(-60deg);
+            border-radius: 20px;
+        }
+
+        .👉:nth-child(1) {
+            animation-delay: 0;
+            filter: brightness(70%);
+            animation-name: tap-upper-1;
+        }
+
+        .👉:nth-child(2) {
+            animation-delay: var(--tap-stagger);
+            filter: brightness(80%);
+            animation-name: tap-upper-2;
+        }
+
+        .👉:nth-child(3) {
+            animation-delay: calc(var(--tap-stagger) * 2);
+            filter: brightness(90%);
+            animation-name: tap-upper-3;
+        }
+
+        .👉:nth-child(4) {
+            animation-delay: calc(var(--tap-stagger) * 3);
+            filter: brightness(100%);
+            animation-name: tap-upper-4;
+        }
+
+        @keyframes tap-upper-1 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(0.4);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(0.4);
+            }
+        }
+
+        @keyframes tap-upper-2 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(0.6);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(0.6);
+            }
+        }
+
+        @keyframes tap-upper-3 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(0.8);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(0.8);
+            }
+        }
+
+        @keyframes tap-upper-4 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(1);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader HTML -->
+    <div class="🤚">
+        <div class="👉"></div>
+        <div class="👉"></div>
+        <div class="👉"></div>
+        <div class="👉"></div>
+        <div class="🌴"></div>
+        <div class="👍"></div>
+    </div>
+
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="download.svg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa-solid fa-bars" style="color: white;"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <div class="navbar-center">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="form-control" type="search" placeholder="Search article" aria-label="Search">
+                        <i class="fa-solid fa-barcode"></i>
+                    </div>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Business Login</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            EN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">EN</a></li>
+                            <li><a class="dropdown-item" href="#">FR</a></li>
+                            <li><a class="dropdown-item" href="#">DE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Second Navbar -->
+
+    <div class="sec-nav">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Category
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="led.html">Led Lights</a></li>
+                                <li><a class="dropdown-item" href="tube.html">Tube Lights</a></li>
+                                <li><a class="dropdown-item" href="celling.html">Ceiling Lights</a></li>
+                                <li><a class="dropdown-item" href="wall.html">Wall Lights</a></li>
+                                <li><a class="dropdown-item" href="lamp.html">Lamp Lights</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="faqs.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="review.html">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <button type="button" class="btn btn-primary contact" data-bs-toggle="modal" data-bs-target="#contactFormModal">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+
+    <div class="main-img-nav">
+        <div class="alert alert-dark alert-dismissible fade show text-center" role="alert" data-aos="zoom-in-up">
+            YOU ARE NOW <strong>CATEGORY</strong> PAGE.
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="filterSection">
+            <div class="main1" data-aos="flip-left">
+                <div class="main-one">
+                    <div class="ring">
+                        <button type="button" id="applyFiltersBtn" class="f-button btn btn-dark m-2 ml-auto"
+                            style="color: #ffffff; border-radius: 50%; font-weight: 900;">
+                            Exit
+                        </button>
+                        <h2 class="heading">LED Lights</h2>
+                        <div class="main-select">
+                            <select class="select slct">
+                                <option>Indoor Lighting</option>
+                                <option>Outdoor Lighting</option>
+                                <option>Smart Lighting</option>
+                                <option>Decorative Lighting</option>
+                            </select>
+
+                            <select class="select">
+                                <option>Ceiling Lights</option>
+                                <option>Wall Lights</option>
+                                <option>Floor Lamps</option>
+                                <option>Table Lamps</option>
+                            </select>
+
+                            <select class="select">
+                                <option>Spotlights</option>
+                                <option>Strip Lights</option>
+                                <option>Pendant Lights</option>
+                                <option>Chandeliers</option>
+                            </select>
+
+                            <select class="select slctt">
+                                <option>LED Bulbs</option>
+                                <option>LED Tubes</option>
+                                <option>Panel Lights</option>
+                                <option>Recessed Lights</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="heading">Filter By</h2>
+                    <div class="filter-sidebar">
+                        <!-- Filter Sections -->
+                        <div class="filter-section">
+                            <h3>Wattage</h3>
+                            <label><input type="radio" name="wattage" value="5w"> 5W (10)</label>
+                            <label><input type="radio" name="wattage" value="10w"> 10W (8)</label>
+                            <label><input type="radio" name="wattage" value="20w"> 20W (15)</label>
+                            <label><input type="radio" name="wattage" value="50w"> 50W (5)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Color Temperature</h3>
+                            <label><input type="radio" name="color-temp" value="warm-white"> Warm White (2700K)
+                                (12)</label>
+                            <label><input type="radio" name="color-temp" value="cool-white"> Cool White (4000K)
+                                (9)</label>
+                            <label><input type="radio" name="color-temp" value="daylight"> Daylight (6000K) (7)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Material</h3>
+                            <label><input type="radio" name="material" value="plastic"> Plastic (20)</label>
+                            <label><input type="radio" name="material" value="metal"> Metal (15)</label>
+                            <label><input type="radio" name="material" value="glass"> Glass (10)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Shape</h3>
+                            <label><input type="radio" name="shape" value="round"> Round (12)</label>
+                            <label><input type="radio" name="shape" value="square"> Square (8)</label>
+                            <label><input type="radio" name="shape" value="rectangular"> Rectangular (5)</label>
+                            <label><input type="radio" name="shape" value="linear"> Linear (7)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>IP Rating</h3>
+                            <label><input type="radio" name="ip-rating" value="ip20"> IP20 (Indoor) (20)</label>
+                            <label><input type="radio" name="ip-rating" value="ip44"> IP44 (Splash Resistant)
+                                (10)</label>
+                            <label><input type="radio" name="ip-rating" value="ip65"> IP65 (Water Resistant) (5)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <input type="range" class="slider" min="0" max="1000" step="50" value="500" id="priceRange">
+                            <span>Price: $<span id="priceValue">500</span></span>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Voltage</h3>
+                            <label><input type="radio" name="voltage" value="12v"> 12V (Low Voltage) (10)</label>
+                            <label><input type="radio" name="voltage" value="110v"> 110V (15)</label>
+                            <label><input type="radio" name="voltage" value="240v"> 240V (10)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="main2" data-aos="flip-right">
+
+            <div class="container">
+                <div class="main-panel-img">
+                    <div class="panel-img">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="toggleFiltersBtn" class="f-button btn btn-dark mt-4"
+                style="color: #ffffff; width: 80%;">Filters</button>
+            <div class="container" data-aos="zoom-in-up">
+                <div class="product-sort text-center">
+                    <p>There are 19 products.</p>
+                    <div class="form-inline">
+                        <label for="sort" class="mr-2">Sort By:</label>
+                        <select id="sort" class="form-control mr-2">
+                            <option value="relevance">Relevance</option>
+                            <option value="price-low-high">Price: Low to High</option>
+                            <option value="price-high-low">Price: High to Low</option>
+                            <option value="newest">Newest Arrivals</option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid my-5" id="arrivals">
+                <div class="row">
+                    <!-- Example product card -->
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmAgK4Qt6TnDgKeWniLiD1pPjWSpu_1qgdbg&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Tube Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light.pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShafxGQCzy5c_MUgmbgZv7DL5sFkXNcxvXZQ&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">New Tube Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light (1).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTojp9z1yW9sgkMCKsP_rqFdLtdpWVR1Aselg&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Interior Tube Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light (2).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxMDhc2e9aG7uCfDPitY41cdJ4JJwEjaxxmQ&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Alert Tube Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light (3).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNI3UXx_gqKg6FzhVGzfysbiPuiL1_4j3Tw&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Wall Tube Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light (4).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP5W-qJBJBhs7DW_Fy0AVlCaHiEG3tUuDMmw&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Gold Tube Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light (5).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-d6bxrwVfSXeUmaAUOHZ4sjdojC6MxBbCXg&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Stairs Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light (6).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Tube Light</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwP4RzmCfneuHfC7cqcRGP2fxAZPs1aO9YKA&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">RGB Tube Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide tube light (7).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div> <!-- closes the .container-fluid -->
+                </div> <!-- closes the .main2 -->
+            </div> <!-- closes the .main -->
+
+
+
+
+            <div class="container" data-aos="zoom-in-up">
+                <div class="pagination-container">
+                    <p>Showing 1-12 of 19 item(s)</p>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-custom">
+                            <li class="page-item mt-3 active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mt-3"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item mt-3 mr-2"><a class="page-link" href="#">></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- Contact Form Modal -->
+    <div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="contactFormModalLabel">Contact Us</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="contact-name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="contact-name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="contact-email" placeholder="Your Email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-message" class="form-label">Message:</label>
+                            <textarea class="form-control" id="contact-message" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline-dark">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer-section py-5">
+        <div class="container text-center">
+            <img src="download.svg" alt="Logo" class="img-fluid mb-4 footer-logo">
+        </div>
+        <section class="newsletter-section text-center py-4">
+            <div class="container">
+                <h2 class="mb-3">Subscribe to our Newsletter</h2>
+                <form class="d-flex justify-content-center">
+                    <input type="email" class="form-control w-50 me-2" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <div class="container text-start">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Customer Care</strong></li>
+                        <li><a href="contactus.html" class="text-white">Contact Us</a></li>
+                        <li><a href="faqs.html" class="text-white">FAQs</a></li>
+                        <li><a href="feedback.html" class="text-white">Feedback</a></li>
+                        <li><a href="#" class="text-white">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Why Shop With Us</strong></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Bespoke Services</a></li>
+                        <li><a href="#" class="text-white">Ideas & Advice</a></li>
+                        <li><a href="#" class="text-white">Guarantee</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Info</strong></li>
+                        <li><a href="#" class="text-white">Privacy</a></li>
+                        <li><a href="#" class="text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white">Delivery Information</a></li>
+                        <li><a href="#" class="text-white">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Contact Us</strong></li>
+                        <li><a href="mailto:support@ultraleds.co.uk" class="text-white">E: support@ultraleds.co.uk</a>
+                        </li>
+                        <li><a href="tel:08000883300" class="text-white">T: 0800 088 3300</a></li>
+                        <li><span class="text-white">(8:30am-5:00pm GMT Mon-Fri)</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mt-4">
+                <ul class="list-inline text-start mb-0">
+                    <li class="list-inline-item"><strong>Follow Us</strong></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+                <ul class="list-inline text-end mb-0">
+                    <li class="list-inline-item"><strong>Payment Methods</strong></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-visa"></i></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-mastercard"></i></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-stripe"></i></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        window.addEventListener("load", function () {
+            document.querySelector(".🤚").style.display = "none";
+        });
+    </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        offset: 300
+    });
+  </script>
+    <script>
+        document.getElementById('toggleFiltersBtn').addEventListener('click', function () {
+            document.getElementById('filterSection').classList.toggle('show');
+        });
+
+        document.getElementById('priceRange').addEventListener('input', function () {
+            document.getElementById('priceValue').textContent = this.value;
+        });
+
+        document.getElementById('applyFiltersBtn').addEventListener('click', function () {
+            document.getElementById('filterSection').classList.toggle('show');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+        integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzbgDF5f4Q5h5p+8XVlvO5veAEZerfxOHnE0J+EDZ7HkQroLhB6SN0I5S1NPAQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>illuminates Your World</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="https://i.ibb.co/529vkCB/images-1-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #000000;
+            background-color: #c9c9c9;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.527);
+            /* Transparent background */
+            position: absolute;
+            /* Positioned over the hero section */
+            width: 100%;
+            /* Full width */
+            top: 0;
+            /* Align at the top */
+            z-index: 10;
+            /* On top of hero section */
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-bottom: 0.25px solid rgb(0, 0, 0);
+        }
+
+        .sec-nav {
+            position: absolute;
+            top: 80px;
+            width: 100%;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            width: 80%;
+        }
+
+        .search-wrapper .form-control {
+            background-color: #0707078c;
+            border: 1px solid #444;
+            color: #ccc;
+            padding-right: 40px;
+            padding-left: 40px;
+            border-radius: 0;
+        }
+
+        .search-wrapper .form-control::placeholder {
+            color: #ccc;
+        }
+
+        .search-wrapper .fa-magnifying-glass {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+        }
+
+        .search-wrapper .fa-barcode {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            border: 1px solid #444;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .dropdown-menu {
+            min-width: 100px;
+        }
+
+        .navbar .nav-link {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #ffffff;
+            border-bottom: 0.5px solid #ffffff;
+            padding-bottom: 8px;
+        }
+
+        .navbar-toggler {
+            border-color: #555;
+        }
+
+        .navbar-toggler-icon {
+            color: #fff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767.98px) {
+            .navbar-brand {
+                order: 1;
+                margin-right: auto;
+            }
+
+            .navbar-toggler {
+                order: 2;
+                margin-left: auto;
+            }
+
+            .navbar-center {
+                order: 3;
+                flex-grow: 1;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .navbar-collapse {
+                order: 4;
+                text-align: start;
+            }
+
+            .search-wrapper {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .nav-item {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+
+
+
+        .contact {
+            position: fixed;
+            bottom: 20px;
+            /* Distance from the bottom */
+            right: 20px;
+            /* Distance from the right */
+            background-color: #000000 !important;
+            /* Customize as needed */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            z-index: 1050;
+            /* Ensure it appears above other content */
+
+        }
+
+
+        .main-img-nav {
+            display: flex;
+            align-items: center;
+            /* Vertically center */
+            justify-content: center;
+            /* Horizontally center */
+            background-image: url(https://wallpapercave.com/wp/wp13509901.jpg);
+            width: 100%;
+            height: 40vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .alert {
+            width: 90%;
+            /* Adjust width as needed */
+            margin-top: 150px;
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            color: #ffffff !important;
+            /* Text color for contrast */
+            border: 1px solid #555;
+            /* Border color (optional) */
+            border-radius: 5px;
+            /* Rounded corners (optional) */
+        }
+
+
+
+        .main {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .main1 {
+            width: 350px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        .heading {
+            width: 90%;
+            text-align: center;
+            color: black;
+            background: radial-gradient(circle, #bbbbbb 0%, #ffffff 100%);
+            border-radius: 30px 0px 30px 0px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 15px;
+        }
+
+
+        .main1:hover .heading {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .select {
+            width: 90%;
+            height: 50px;
+            font-size: large;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            border: 0.25px solid rgb(168, 168, 168);
+        }
+
+        .select:hover {
+            color: rgb(37, 37, 37);
+        }
+
+        .main-select {
+            border: 0.25px solid rgb(255, 255, 255);
+            width: 90%;
+            height: 280px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 17px;
+        }
+
+        .main-select:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .slctt {
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .slct {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+
+        .filter-sidebar {
+            width: 95%;
+            border-radius: 10px;
+            height: 880px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 15px;
+        }
+
+        .filter-sidebar:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-sidebar:hover .heading {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-section h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: rgb(0, 0, 0);
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+
+
+        .filter-sidebar:hover h3 {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        .filter-section label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: rgb(36, 36, 36);
+        }
+
+
+        .filter-section input[type="radio"] {
+            margin-right: 10px;
+            margin-left: 40px;
+        }
+
+        .filter-section .slider {
+            width: 70%;
+            margin-left: 40px;
+        }
+
+        .filter-section span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            margin-left: 40px;
+        }
+
+
+
+
+        .main2 {
+            width: 70%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            border-radius: 10px;
+        }
+
+
+        .panel-img {
+            width: 100%;
+            height: 300px;
+            background-image: url(https://cdn.leonardo.ai/users/c6b8a8be-a8f2-4e82-aac7-e796197b94d7/generations/62f07f67-e3fe-42b2-9033-28918c4f0af8/Leonardo_Phoenix_Create_a_modern_and_professional_About_Us_ima_2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-panel-img:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-panel-img {
+            border: 1px solid rgb(0, 0, 0);
+            width: 100%;
+            height: 300px;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .product-sort {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            color: white;
+            margin-top: 40px;
+            background: rgb(92, 90, 90);
+            background: linear-gradient(90deg, rgba(92, 90, 90, 1) 14%, rgb(177, 177, 177) 100%);
+        }
+
+        .product-sort p {
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+
+        .product-sort select {
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 660px) {
+            .product-sort {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .product-sort p {
+                margin-bottom: 10px;
+            }
+
+            .product-sort .form-inline {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-sort .form-inline select,
+            .product-sort .form-inline button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .product-sort .form-inline button {
+                margin-bottom: 0;
+            }
+        }
+
+
+
+        .product-card {
+            background-color: #dfdfdf;
+            /* Light background color */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge-new {
+            background-color: #ff9900;
+            /* Customize color to match your theme */
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            font-size: 1.125rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-rating {
+            font-size: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.125rem;
+            color: #ff9900;
+            /* Customize color to match your theme */
+        }
+
+        .product-price del {
+            color: #999;
+            margin-right: 5px;
+        }
+
+        /* PDF Download Button Styling */
+        .btn-download {
+            margin-top: auto;
+            /* Push button to the bottom of the card */
+            color: #000000 !important;
+            font-size: 1.5rem !important;
+            border-radius: 5px !important;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-download:hover {
+            border: 0.5px solid black !important;
+            color: #424242 !important;
+        }
+
+        /* Image Styling */
+        .product-card img {
+            height: 200px;
+            /* Fixed height for images */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the fixed height */
+            width: 100%;
+            /* Ensure the image covers the full width of the card */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .product-card {
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        .pagination-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgb(39, 39, 39);
+
+            margin-bottom: 20px;
+            color: white;
+            background: rgb(92, 90, 90);
+            background: linear-gradient(90deg, rgba(92, 90, 90, 1) 14%, rgb(177, 177, 177) 100%);
+            border-radius: 10px;
+        }
+
+        .pagination-container p {
+            padding: 1em;
+            margin: 0;
+        }
+
+        .pagination-custom .page-item.active .page-link {
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(0, 0, 0);
+        }
+
+        .pagination-custom .page-item .page-link {
+            color: black;
+            background-color: white;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+
+        .f-button {
+            display: none;
+        }
+
+
+
+        @media(max-width: 1200px) {
+            .main2 {
+                width: 100%;
+            }
+
+            .main1 {
+                display: none;
+            }
+
+            .f-button {
+                display: block;
+            }
+
+            #filterSection {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: -400px;
+                background-color: rgb(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid black;
+                border-radius: 30px;
+                z-index: 9999;
+                padding: 20px;
+                width: 380px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                overflow-y: auto;
+            }
+
+            #filterSection.show {
+                left: 0;
+            }
+
+            .main {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            .main1 {
+                width: 350px;
+                background-color: rgba(207, 207, 207, 0.226);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 10px;
+            }
+
+            .heading {
+                width: 90%;
+                text-align: center;
+                color: black;
+                background: radial-gradient(circle, #bbbbbb 0%, #ffffff 100%);
+                border-radius: 30px 0px 30px 0px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                margin-left: 15px;
+            }
+
+
+            .main1:hover .heading {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .select {
+                width: 90%;
+                height: 50px;
+                font-size: large;
+                background-color: transparent;
+                color: rgb(0, 0, 0);
+                border: 0.25px solid rgb(0, 0, 0);
+            }
+
+            .select:hover {
+                color: rgb(22, 22, 22);
+            }
+
+            .main-select {
+                border: 0.25px solid rgb(255, 255, 255);
+                width: 90%;
+                height: 280px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-left: 17px;
+            }
+
+            .main-select:hover {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .slctt {
+                border-radius: 0px 0px 10px 10px;
+            }
+
+            .slct {
+                border-radius: 10px 10px 0px 0px;
+            }
+
+
+            .filter-sidebar {
+                width: 90%;
+                border-radius: 10px;
+                height: 880px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 15px;
+            }
+
+            .filter-sidebar:hover {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .filter-sidebar:hover .heading {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .filter-section h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: rgb(0, 0, 0);
+                margin-left: 40px;
+                margin-top: 10px;
+            }
+
+
+            .filter-sidebar:hover h3 {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+                color: black;
+            }
+
+            .filter-section label {
+                display: block;
+                font-size: 14px;
+                font-weight: 700;
+                color: rgb(36, 36, 36);
+            }
+
+
+            .filter-section input[type="radio"] {
+                margin-right: 10px;
+                margin-left: 40px;
+            }
+
+            .filter-section .slider {
+                width: 70%;
+                margin-left: 40px;
+            }
+
+            .filter-section span {
+                display: block;
+                margin-top: 5px;
+                font-size: 14px;
+                margin-left: 40px;
+            }
+        }
+
+
+
+
+
+
+
+        .footer-section {
+            background-color: #85858534;
+            color: #ffffff;
+            background-image: url('https://www.euchips.com/uploads/footer_bg.jpg');
+            /* Parallax background image */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            /* Adjust as needed */
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section {
+            background-color: #b4b4b477;
+            color: #000000;
+            padding-top: 40px;
+            /* Increase space from the content above */
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section h2 {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .newsletter-section .form-control {
+            border-radius: 0;
+            border: 2px solid #000000;
+        }
+
+        .newsletter-section .btn-primary {
+            background-color: #000000;
+            border: none;
+            border-radius: 0;
+            color: #ffffff;
+        }
+
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #dcdcdc;
+        }
+
+        .footer-section ul {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-section .list-inline {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        .footer-section .list-inline i {
+            font-size: 24px;
+            /* Consistent icon size */
+        }
+
+        .footer-section .d-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section .text-center img {
+            margin-bottom: 20px;
+        }
+
+        .footer-section .text-start {
+            text-align: left;
+        }
+
+        .footer-section .text-end {
+            text-align: right;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .footer-section .col-md-4 {
+                text-align: start;
+                margin-bottom: 20px;
+            }
+
+            .newsletter-section {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+    /* Loader CSS */
+    .🤚 {
+      --skin-color: #E4C560;
+      --tap-speed: 0.6s;
+      --tap-stagger: 0.1s;
+      position: fixed; /* Change to fixed to keep loader in view */
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust centering */
+      width: 80px;
+      height: 60px;
+    }
+    .🤚:before {
+      content: '';
+      display: block;
+      width: 180%;
+      height: 75%;
+      position: absolute;
+      top: 70%;
+      right: 20%;
+      background-color: black;
+      border-radius: 40px 10px;
+      filter: blur(10px);
+      opacity: 0.3;
+    }
+    .🌴 {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--skin-color);
+      border-radius: 10px 40px;
+    }
+    .👍 {
+      position: absolute;
+      width: 120%;
+      height: 38px;
+      background-color: var(--skin-color);
+      bottom: -18%;
+      right: 1%;
+      transform-origin: calc(100% - 20px) 20px;
+      transform: rotate(-20deg);
+      border-radius: 30px 20px 20px 10px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      border-left: 2px solid rgba(0, 0, 0, 0.1);
+    }
+    .👍:after {
+      width: 20%;
+      height: 60%;
+      content: '';
+      background-color: rgba(255, 255, 255, 0.3);
+      position: absolute;
+      bottom: -8%;
+      left: 5px;
+      border-radius: 60% 10% 10% 30%;
+      border-right: 2px solid rgba(0, 0, 0, 0.05);
+    }
+    .👉 {
+      position: absolute;
+      width: 80%;
+      height: 35px;
+      background-color: var(--skin-color);
+      bottom: 32%;
+      right: 64%;
+      transform-origin: 100% 20px;
+      animation-duration: calc(var(--tap-speed) * 2);
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      transform: rotate(10deg);
+    }
+    .👉:before {
+      content: '';
+      position: absolute;
+      width: 140%;
+      height: 30px;
+      background-color: var(--skin-color);
+      bottom: 8%;
+      right: 65%;
+      transform-origin: calc(100% - 20px) 20px;
+      transform: rotate(-60deg);
+      border-radius: 20px;
+    }
+    .👉:nth-child(1) {
+      animation-delay: 0;
+      filter: brightness(70%);
+      animation-name: tap-upper-1;
+    }
+    .👉:nth-child(2) {
+      animation-delay: var(--tap-stagger);
+      filter: brightness(80%);
+      animation-name: tap-upper-2;
+    }
+    .👉:nth-child(3) {
+      animation-delay: calc(var(--tap-stagger) * 2);
+      filter: brightness(90%);
+      animation-name: tap-upper-3;
+    }
+    .👉:nth-child(4) {
+      animation-delay: calc(var(--tap-stagger) * 3);
+      filter: brightness(100%);
+      animation-name: tap-upper-4;
+    }
+    @keyframes tap-upper-1 {
+      0%, 50%, 100% {
+        transform: rotate(10deg) scale(0.4);
+      }
+      40% {
+        transform: rotate(50deg) scale(0.4);
+      }
+    }
+    @keyframes tap-upper-2 {
+      0%, 50%, 100% {
+        transform: rotate(10deg) scale(0.6);
+      }
+      40% {
+        transform: rotate(50deg) scale(0.6);
+      }
+    }
+    @keyframes tap-upper-3 {
+      0%, 50%, 100% {
+        transform: rotate(10deg) scale(0.8);
+      }
+      40% {
+        transform: rotate(50deg) scale(0.8);
+      }
+    }
+    @keyframes tap-upper-4 {
+      0%, 50%, 100% {
+        transform: rotate(10deg) scale(1);
+      }
+      40% {
+        transform: rotate(50deg) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loader HTML -->
+  <div class="🤚">
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="🌴"></div>		
+    <div class="👍"></div>
+  </div>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="download.svg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa-solid fa-bars" style="color: white;"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <div class="navbar-center">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="form-control" type="search" placeholder="Search article" aria-label="Search">
+                        <i class="fa-solid fa-barcode"></i>
+                    </div>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Business Login</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            EN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">EN</a></li>
+                            <li><a class="dropdown-item" href="#">FR</a></li>
+                            <li><a class="dropdown-item" href="#">DE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Second Navbar -->
+
+    <div class="sec-nav">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Category
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="led.html">Led Lights</a></li>
+                                <li><a class="dropdown-item" href="tube.html">Tube Lights</a></li>
+                                <li><a class="dropdown-item" href="celling.html">Ceiling Lights</a></li>
+                                <li><a class="dropdown-item" href="wall.html">Wall Lights</a></li>
+                                <li><a class="dropdown-item" href="lamp.html">Lamp Lights</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="faqs.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="review.html">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <button type="button" class="btn btn-primary contact" data-bs-toggle="modal" data-bs-target="#contactFormModal">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+
+    <div class="main-img-nav">
+        <div class="alert alert-dark alert-dismissible fade show text-center" role="alert" data-aos="fade-up">
+            YOU ARE NOW <strong>CATEGORY</strong> PAGE.
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="filterSection">
+            <div class="main1" data-aos="flip-left">
+                <div class="main-one">
+                    <div class="ring">
+                        <button type="button" id="applyFiltersBtn" class="f-button btn btn-dark m-2 ml-auto"
+                            style="color: #ffffff; border-radius: 50%; font-weight: 900;">
+                            Exit
+                        </button>
+                        <h2 class="heading">LED Lights</h2>
+                        <div class="main-select">
+                            <select class="select slct">
+                                <option>Indoor Lighting</option>
+                                <option>Outdoor Lighting</option>
+                                <option>Smart Lighting</option>
+                                <option>Decorative Lighting</option>
+                            </select>
+
+                            <select class="select">
+                                <option>Ceiling Lights</option>
+                                <option>Wall Lights</option>
+                                <option>Floor Lamps</option>
+                                <option>Table Lamps</option>
+                            </select>
+
+                            <select class="select">
+                                <option>Spotlights</option>
+                                <option>Strip Lights</option>
+                                <option>Pendant Lights</option>
+                                <option>Chandeliers</option>
+                            </select>
+
+                            <select class="select slctt">
+                                <option>LED Bulbs</option>
+                                <option>LED Tubes</option>
+                                <option>Panel Lights</option>
+                                <option>Recessed Lights</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="heading">Filter By</h2>
+                    <div class="filter-sidebar">
+                        <!-- Filter Sections -->
+                        <div class="filter-section">
+                            <h3>Wattage</h3>
+                            <label><input type="radio" name="wattage" value="5w"> 5W (10)</label>
+                            <label><input type="radio" name="wattage" value="10w"> 10W (8)</label>
+                            <label><input type="radio" name="wattage" value="20w"> 20W (15)</label>
+                            <label><input type="radio" name="wattage" value="50w"> 50W (5)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Color Temperature</h3>
+                            <label><input type="radio" name="color-temp" value="warm-white"> Warm White (2700K)
+                                (12)</label>
+                            <label><input type="radio" name="color-temp" value="cool-white"> Cool White (4000K)
+                                (9)</label>
+                            <label><input type="radio" name="color-temp" value="daylight"> Daylight (6000K) (7)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Material</h3>
+                            <label><input type="radio" name="material" value="plastic"> Plastic (20)</label>
+                            <label><input type="radio" name="material" value="metal"> Metal (15)</label>
+                            <label><input type="radio" name="material" value="glass"> Glass (10)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Shape</h3>
+                            <label><input type="radio" name="shape" value="round"> Round (12)</label>
+                            <label><input type="radio" name="shape" value="square"> Square (8)</label>
+                            <label><input type="radio" name="shape" value="rectangular"> Rectangular (5)</label>
+                            <label><input type="radio" name="shape" value="linear"> Linear (7)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>IP Rating</h3>
+                            <label><input type="radio" name="ip-rating" value="ip20"> IP20 (Indoor) (20)</label>
+                            <label><input type="radio" name="ip-rating" value="ip44"> IP44 (Splash Resistant)
+                                (10)</label>
+                            <label><input type="radio" name="ip-rating" value="ip65"> IP65 (Water Resistant) (5)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <input type="range" class="slider" min="0" max="1000" step="50" value="500" id="priceRange">
+                            <span>Price: $<span id="priceValue">500</span></span>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Voltage</h3>
+                            <label><input type="radio" name="voltage" value="12v"> 12V (Low Voltage) (10)</label>
+                            <label><input type="radio" name="voltage" value="110v"> 110V (15)</label>
+                            <label><input type="radio" name="voltage" value="240v"> 240V (10)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="main2" data-aos="flip-right">
+
+            <div class="container" data-aos="zoom-in-up">
+                <div class="main-panel-img">
+                    <div class="panel-img">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="toggleFiltersBtn" class="f-button btn btn-dark mt-4"
+                style="color: #ffffff; width: 80%;">Filters</button>
+            <div class="container">
+                <div class="product-sort text-center" data-aos="zoom-in-up">
+                    <p>There are 19 products.</p>
+                    <div class="form-inline">
+                        <label for="sort" class="mr-2">Sort By:</label>
+                        <select id="sort" class="form-control mr-2">
+                            <option value="relevance">Relevance</option>
+                            <option value="price-low-high">Price: Low to High</option>
+                            <option value="price-high-low">Price: High to Low</option>
+                            <option value="newest">Newest Arrivals</option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid my-5" id="arrivals">
+                <div class="row">
+                    <!-- Example product card -->
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="data:image/jpeg;base64,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"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">deco Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light.pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDQ0NDQ8NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhMSkrLi4uFx8zODMsNygtLisBCgoKDg0OFhAQFS0dHR0tKystLTc3KystLS0tKy03Ky0vLS0uNysrKysrNS0tKy0uKy0uNy0vLSstNzErLS03Lf/AABEIAQAAxQMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAAAAQIEBQMGB//EAEAQAAICAQEFBQUFBQUJAAAAAAABAhEDBAUSITFRQWFxkaETIjKBwQZicrHRFCNCUvAVQ2N00jNEU2RzgpKisv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMFBP/EACcRAQEAAgECBQMFAAAAAAAAAAABAhEhAwQSIjFB8FFhkTKB0eHx/9oADAMBAAIRAxEAPwD8fChhRhsqAdBQCAqgoCaCiqCgJoKKoKAVCZVCa4PwAjS/7OX4129z/QuiNH8EvxL8melFvqkIB0FEUgHQUBIUVQUBNBRVBQE0FFUAEgOhgOgodBRFIKHQ6AmgoqgoBUA6CgFQUOhN0m+isAo6OyNiZdXHLKEsUIYXijN5HK7ybyjupJ38Lvkcn23cdDZu282nhkhi3FHLLFOe9Fydwvdrjy95mM/Fry+rWMm+V7H2FlzauWgxzx+1uVSyOUcbaXVJv0MLXpwN2ztsZcOq/bMfs/btSXvRbhxXHgmvzM8cak+dWMblvn7f2WTXDxCjpbQ2RLDhwZ9+M454ykkk4yhuuqfU5xtkhFBQCChhQEhRVABNAVQATQx0ADAdBQUgHQ6AkKKCgJoKKoKAmhSXB+DLoKA56LRCKRK29cZtwGKBs05Ga732hdaXQx/wJS85s+co7/2kfuaOPTSYvVyZwqLETQUVQUUTQUVQUBNBRVBQE0BVBQEgUICqAY6IJCigAkYwAQDoAEA6CgOb2jQnzY0K09YGzTmOBs05Ertfabnpv8pp/wAmcSjufaVcdL/lMH1OJRYhAOgoBAOgoCRjoKAQiqCgEA6AB0BVBQVIx0FAIB0FAIB0FAIB0D5PwA5KKRMSkK09YGzTmOBrwESu79o+WkfXSYvRyOKdrb3HFoX101eU5HGoMwgGFFUgHQUQIB0FFCAdBQCEVQAVQUMdEE0FFUFATQUVQUBNBRVBQE0Rn4Qm/uy/I9aPDWusU/kvNoo5kSkRE9EK09IGvAZYGnCRK7+1+Ok0EvuZoeU7+px6O1rlezdLL+TPmj5qL+hx6CRNDodBQE0FFUFATQUVQUBNBRVBQE0BVAAwKoKCpGOgoBAOgoBAOgoBGPacv3aXWS8qZto521pcYR7m/wCvJlgxRPVHnFHpEUesDRiPCJ74yJX0db2yZ/4epg/k4tHGR3dirf2fr8faowyL5M4WP4V5eQIYDoKCkA6CgEA6CgEA6CgEAwAoKKoKAmgoqhUAgoqgoCaAqgoCaOPtGV5X91KP1+p2qOfh0ftcjS4ucpPi6Vc+aEowRR6RRWpxuEnFV5J2uvEMTfbXkgLie0AlVKq/8UeW9K6T9I/oRH132OalPPhf99hnFeNM4UY05RfZJr+vU17DzTxSWZNpxfBqlJrtq7Xoytq4PZ6rNHeck9ycZNJOUZR3k+HDtBGSgoqgoqpoKKoKAkKKoKAmgoqgoCaAqgAqgodBRFKgodAAqCh0FAKgodBQHnldRb7vUvZKrfl0g68XwR4auXwx68X9DTpeCrrQoxbYwe7Ga7HuvwfL+u852M+j1mLew5F27ra8Vx+h83Amxpb4Bpo3J9yfnyX5kSfA2bIx3Jd84+S95/kEdaGPdio9FRe2Peho83XHPTy8YS930kvIeQMkHk0ubH24nHUR8F7svSSfyJCsAUGOVpPqvUqjSpoCgAmgKoKAkCgoCaAqgAYUVQUBIUVQUBIUVQUBNAVRn1uSo7q5y/8AntAzw9+bl2dnh2HQxIy6WHA2wRKNOmxubUIreb4Va49xy4fZbXOTjDTTm1fw5MLdda3joRit6EuTi1x7uT9D7rYuy8nsYQSanmbc80ZJTwQjajvfzw5uvvdnM+PuO4y6XPHPz6vr6PQx6k53w/Ol9lde7X7NNtc4qeJyXyUjTo9lZ8K/eYpxcd9tVbT4LkvmfqmXY+SUXCO9jlHdrUxa3tVXCn16cfhfdz+M+1+haljytPH7WLjOF23kjwUpvtluuv8At+Rw6PfXqZeHj5+7pn2mGONylvD5+Uj20GVQywc/glePIuuOS3ZejPDdpJLkhM9KPgrNLC8WXLgl8WObXjT5/k/mVRq26nJYNYl8a9nl/wCrBU78Y15GdcUmuT4rwNETQUVQUBNBRVBQE0BQwIAugAKHQ6ABUA6CgFQUVQUBEnSbfBLizm25zcn28l0R76/Nb9mu5y+i+vkLTQ7QNOOJogjzgjTjiZqvbSbqnFzUXD+JSipcPmj6f+ztdmxwlo8vs4SUVGs6wUnyVcKs4ez8GNu8kmkuUVG78e4+r2Jkxwit7fcY437SKcUnitq967jxXS76nn93lqyyfw+/tZvGz/WLH9n9swTeTUS3YOmv7R+CXSt7gzj7X0epx5cf7ZkcoRc+Esi1FtVce2uw/Qddq8MYxSWXejicsLcccfY4K+JLfe+uC59OiSPk88tPJyU/aPE4Umqct5+8pL3nXNdebPn6Wduf6fw6ZY+S238vkZcW3wVtukqXyPNm3W4Yxm1CW/D+GW64Ou9djMjR68u3mWNmhgs2HNpHW9P97gv/AI0V8PzX1OLpJU3jlacbpPn3rzNsZOLUoupRakmuaa5Hr9otPbx63Elu5qc0uKhnr3ovx/U1GfdmoAxzUkpLt9O4qiqkCqCgJAqgAQDABgMCBUAwoBHjq8/s43zk+EF1f6Hu+HF8EuLfRHHy5Hkm59nKC6R6+LAWGDb48W3bfV9rOhjieGGBqgKPaCNOJGaBrwma1HQ0karhbbUUu9n0GwcM5JSxpZM2GUt/FJ1CUJO7lS4+HZS5HK0uaNJeziqadqUlfjzO3sjX1lioYYVvOLkpSjHfr4Wlz5pHmdzc7Lw9LtvDJdXdb9XoXODhhlLJjk97Plb3cmF892P3fSuXafLLHvZMqjwhKe7jb92LpUr/AJW6vpxPtNfr8jxpLSQhOT97HDLOMty/ibriuXA+WltGO9J+yhHcnLhGcmprsfZafQ4dDx745dOpZcPNx8+z5/VY6bTVNNppqmn0MU0dza2tjm4+xx45fzwc7aXY03T8jjTR6+FtnMeXlJLwzyOjsqcZwy6TI6jnXuSfKGTsZgkQzpHOxl3JYM08ORVUt19FLsfg+HoajXqsf7ZiS/3vFCl/zGJdn416/lzdFm3luv4o+q6lI9wKCgJGOgoBCKAAAoAJGMAMW051FQXOb4/hXP6GfS4HOSjHm/JLqeuui3livucPG3+hp2PGssk+e616oqPJRptLknw7z1ijzjGuHTgesSK9ImjFIzI9YSM1XSwZaOnpdZupJOUV0jOUUvJnBhI9oZTnlhL6umOdno+hy7Tm+eXM335sr+pzNTnt222+spOX5mT2x5TyGcenJ7Lc6eWZmmy5SPJs6yOdqGQy2SVCjJxalFtSi001zTQ9sQSli1kElHPftYrlHKvj8+Yme+oV7PnfZq47vi8fH0s0zXkBGmd44fhX5HpQUhjACQKABDHQUAgHQwMWujW7NdnB+DCGSpLJHrx8e/uZrlFNNPk+Bzpxlil3dklyfc0B1JYo5fextKb545OrfczyyYpQ4TjKP4lSZ44MsX3P7vLyN2LPKPw5Wl0tpeXIi6ZkNG15ZP4o4pd7xY1/7JX6k7if93BeEp/6ibXTMpFe0NEcMb4ppdtSv6fU6ml0uha/eTyxfdFtfmYyy0sxriLIPePocug2bVxz5E+m5J/Q5Oq0+JP91OUlf8cd3gSZy+y3GsbZLPZ4u/0E4I3tnTxoVHq66M85TKmkyRn12pl7KOK/cjJyUUuc3/E+rrgPNnSR56TE5yWSS91cYJ/xPr4FiNeGG7GMf5YpfOixgFKgoYAKhgAAAwAQwAAFKKappNPsYwAxz0Nccbr7svoysblH4rXjy8zUAoMMr4rzRsxq+ZhcF0rvXD8hpNcm/nTMXGtzKOtjgjTjxR6L5nEjmmu1eVHvj10109TlcMnSZ4uy8MOkTzlhj0Ry57Qm+yK8/wBTxlqZvoSdPJbni6eSEDLllBdpjlkk+08pY75tv5nSYX6udzh6nVxXIxSlln8KpdWqXqbY40uSV9e3zKOsmmLWPFoFe9ke++n8K/U2AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Recharble Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light (1).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDfa9c7_WnDbNkJT3lcl6gzDsZokhKvKi4yw&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Interior Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light (2).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfY8m9OthqAqKacCctzOSy_PY2FbFQLXsaZg&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Living Room Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light (3).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmA2paWe2v1BASZzrLHpB4avmjqOQCs7kFlg&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Wall Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light (4).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgO45xhg9ZrUkadXJ2ta_EtSy4XNL9BlnvbQ&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Celling Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light (5).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKC6uXHxyVWlz56ukClekYjtc7QqcgwW6JJQ&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Stairs Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light (6).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Led</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIIQ6H48iC0yU5WAtkUgFleP60EBzMgKx-yQ&s"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Bedroom Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide led light (7).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div> <!-- closes the .container-fluid -->
+                </div> <!-- closes the .main2 -->
+            </div> <!-- closes the .main -->
+
+
+
+
+            <div class="container">
+                <div class="pagination-container" data-aos="zoom-in-up">
+                    <p>Showing 1-12 of 19 item(s)</p>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-custom">
+                            <li class="page-item mt-3 active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mt-3"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item mt-3 mr-2"><a class="page-link" href="#">></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+  <!-- Contact Form Modal -->
+  <div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="contactFormModalLabel">Contact Us</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="mb-3">
+                      <label for="contact-name" class="form-label">Name:</label>
+                      <input type="text" class="form-control" id="contact-name" placeholder="Your Name" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="contact-email" class="form-label">Email:</label>
+                      <input type="email" class="form-control" id="contact-email" placeholder="Your Email"
+                          required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="contact-message" class="form-label">Message:</label>
+                      <textarea class="form-control" id="contact-message" rows="4" placeholder="Your Message"
+                          required></textarea>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-outline-dark">Send Message</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+   <!-- Footer Section -->
+   <footer class="footer-section py-5">
+    <div class="container text-center">
+        <img src="download.svg" alt="Logo" class="img-fluid mb-4 footer-logo">
+    </div>
+    <section class="newsletter-section text-center py-4">
+        <div class="container">
+            <h2 class="mb-3">Subscribe to our Newsletter</h2>
+            <form class="d-flex justify-content-center">
+                <input type="email" class="form-control w-50 me-2" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <div class="container text-start">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 mb-4">
+                <ul class="list-unstyled">
+                    <li><strong>Customer Care</strong></li>
+                    <li><a href="contactus.html" class="text-white">Contact Us</a></li>
+                    <li><a href="faqs.html" class="text-white">FAQs</a></li>
+                    <li><a href="feedback.html" class="text-white">Feedback</a></li>
+                    <li><a href="#" class="text-white">Returns</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <ul class="list-unstyled">
+                    <li><strong>Why Shop With Us</strong></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Bespoke Services</a></li>
+                    <li><a href="#" class="text-white">Ideas & Advice</a></li>
+                    <li><a href="#" class="text-white">Guarantee</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <ul class="list-unstyled">
+                    <li><strong>Info</strong></li>
+                    <li><a href="#" class="text-white">Privacy</a></li>
+                    <li><a href="#" class="text-white">Terms & Conditions</a></li>
+                    <li><a href="#" class="text-white">Delivery Information</a></li>
+                    <li><a href="#" class="text-white">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4">
+                <ul class="list-unstyled">
+                    <li><strong>Contact Us</strong></li>
+                    <li><a href="mailto:support@ultraleds.co.uk" class="text-white">E: support@ultraleds.co.uk</a>
+                    </li>
+                    <li><a href="tel:08000883300" class="text-white">T: 0800 088 3300</a></li>
+                    <li><span class="text-white">(8:30am-5:00pm GMT Mon-Fri)</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between mt-4">
+            <ul class="list-inline text-start mb-0">
+                <li class="list-inline-item"><strong>Follow Us</strong></li>
+                <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+            <ul class="list-inline text-end mb-0">
+                <li class="list-inline-item"><strong>Payment Methods</strong></li>
+                <li class="list-inline-item"><i class="fa-brands fa-cc-visa"></i></li>
+                <li class="list-inline-item"><i class="fa-brands fa-cc-mastercard"></i></li>
+                <li class="list-inline-item"><i class="fa-brands fa-cc-stripe"></i></li>
+                <li class="list-inline-item"><i class="fa-brands fa-cc-paypal"></i></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    window.addEventListener("load", function() {
+      document.querySelector(".🤚").style.display = "none";
+    });
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+      offset: 300
+  });
+</script>
+<script>
+    document.getElementById('toggleFiltersBtn').addEventListener('click', function () {
+        document.getElementById('filterSection').classList.toggle('show');
+    });
+
+    document.getElementById('priceRange').addEventListener('input', function () {
+        document.getElementById('priceValue').textContent = this.value;
+    });
+
+    document.getElementById('applyFiltersBtn').addEventListener('click', function () {
+        document.getElementById('filterSection').classList.toggle('show');
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+    integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzbgDF5f4Q5h5p+8XVlvO5veAEZerfxOHnE0J+EDZ7HkQroLhB6SN0I5S1NPAQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

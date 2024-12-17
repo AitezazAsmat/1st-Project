@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>illuminates Your World</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="https://i.ibb.co/529vkCB/images-1-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #000000;
+            background-color: #c9c9c9;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.527);
+            /* Transparent background */
+            position: absolute;
+            /* Positioned over the hero section */
+            width: 100%;
+            /* Full width */
+            top: 0;
+            /* Align at the top */
+            z-index: 10;
+            /* On top of hero section */
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-bottom: 0.25px solid rgb(0, 0, 0);
+        }
+
+        .sec-nav {
+            position: absolute;
+            top: 80px;
+            width: 100%;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            width: 80%;
+        }
+
+        .search-wrapper .form-control {
+            background-color: #0707078c;
+            border: 1px solid #444;
+            color: #ccc;
+            padding-right: 40px;
+            padding-left: 40px;
+            border-radius: 0;
+        }
+
+        .search-wrapper .form-control::placeholder {
+            color: #ccc;
+        }
+
+        .search-wrapper .fa-magnifying-glass {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+        }
+
+        .search-wrapper .fa-barcode {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            border: 1px solid #444;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .dropdown-menu {
+            min-width: 100px;
+        }
+
+        .navbar .nav-link {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #ffffff;
+            border-bottom: 0.5px solid #ffffff;
+            padding-bottom: 8px;
+        }
+
+        .navbar-toggler {
+            border-color: #555;
+        }
+
+        .navbar-toggler-icon {
+            color: #fff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767.98px) {
+            .navbar-brand {
+                order: 1;
+                margin-right: auto;
+            }
+
+            .navbar-toggler {
+                order: 2;
+                margin-left: auto;
+            }
+
+            .navbar-center {
+                order: 3;
+                flex-grow: 1;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .navbar-collapse {
+                order: 4;
+                text-align: start;
+            }
+
+            .search-wrapper {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .nav-item {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+
+
+
+        .contact {
+            position: fixed;
+            bottom: 20px;
+            /* Distance from the bottom */
+            right: 20px;
+            /* Distance from the right */
+            background-color: #000000 !important;
+            /* Customize as needed */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            z-index: 1050;
+            /* Ensure it appears above other content */
+
+        }
+
+
+        .main-img-nav {
+            display: flex;
+            align-items: center;
+            /* Vertically center */
+            justify-content: center;
+            /* Horizontally center */
+            background-image: url(https://wallpapercave.com/wp/wp13509901.jpg);
+            width: 100%;
+            height: 40vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .alert {
+            width: 90%;
+            /* Adjust width as needed */
+            margin-top: 150px;
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            color: #ffffff !important;
+            /* Text color for contrast */
+            border: 1px solid #555;
+            /* Border color (optional) */
+            border-radius: 5px;
+            /* Rounded corners (optional) */
+        }
+
+
+
+        .main {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .main1 {
+            width: 350px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        .heading {
+            width: 90%;
+            text-align: center;
+            color: black;
+            background: radial-gradient(circle, #bbbbbb 0%, #ffffff 100%);
+            border-radius: 30px 0px 30px 0px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 15px;
+        }
+
+
+        .main1:hover .heading {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .select {
+            width: 90%;
+            height: 50px;
+            font-size: large;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            border: 0.25px solid rgb(168, 168, 168);
+        }
+
+        .select:hover {
+            color: rgb(37, 37, 37);
+        }
+
+        .main-select {
+            border: 0.25px solid rgb(255, 255, 255);
+            width: 90%;
+            height: 280px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 17px;
+        }
+
+        .main-select:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .slctt {
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .slct {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+
+        .filter-sidebar {
+            width: 95%;
+            border-radius: 10px;
+            height: 880px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 15px;
+        }
+
+        .filter-sidebar:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-sidebar:hover .heading {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-section h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: rgb(0, 0, 0);
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+
+
+        .filter-sidebar:hover h3 {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        .filter-section label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: rgb(36, 36, 36);
+        }
+
+
+        .filter-section input[type="radio"] {
+            margin-right: 10px;
+            margin-left: 40px;
+        }
+
+        .filter-section .slider {
+            width: 70%;
+            margin-left: 40px;
+        }
+
+        .filter-section span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            margin-left: 40px;
+        }
+
+
+
+
+        .main2 {
+            width: 70%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            border-radius: 10px;
+        }
+
+
+        .panel-img {
+            width: 100%;
+            height: 300px;
+            background-image: url(https://cdn.leonardo.ai/users/c6b8a8be-a8f2-4e82-aac7-e796197b94d7/generations/62f07f67-e3fe-42b2-9033-28918c4f0af8/Leonardo_Phoenix_Create_a_modern_and_professional_About_Us_ima_2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-panel-img:hover {
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-panel-img {
+            border: 1px solid rgb(0, 0, 0);
+            width: 100%;
+            height: 300px;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .product-sort {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            color: white;
+            margin-top: 40px;
+            background: rgb(92, 90, 90);
+            background: linear-gradient(90deg, rgba(92, 90, 90, 1) 14%, rgb(177, 177, 177) 100%);
+        }
+
+        .product-sort p {
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+
+        .product-sort select {
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 660px) {
+            .product-sort {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .product-sort p {
+                margin-bottom: 10px;
+            }
+
+            .product-sort .form-inline {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-sort .form-inline select,
+            .product-sort .form-inline button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .product-sort .form-inline button {
+                margin-bottom: 0;
+            }
+        }
+
+
+
+        .product-card {
+            background-color: #dfdfdf;
+            /* Light background color */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge-new {
+            background-color: #ff9900;
+            /* Customize color to match your theme */
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            font-size: 1.125rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-rating {
+            font-size: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.125rem;
+            color: #ff9900;
+            /* Customize color to match your theme */
+        }
+
+        .product-price del {
+            color: #999;
+            margin-right: 5px;
+        }
+
+        /* PDF Download Button Styling */
+        .btn-download {
+            margin-top: auto;
+            /* Push button to the bottom of the card */
+            color: #000000 !important;
+            font-size: 1.5rem !important;
+            border-radius: 5px !important;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-download:hover {
+            border: 0.5px solid black !important;
+            color: #424242 !important;
+        }
+
+        /* Image Styling */
+        .product-card img {
+            height: 200px;
+            /* Fixed height for images */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the fixed height */
+            width: 100%;
+            /* Ensure the image covers the full width of the card */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .product-card {
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        .pagination-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgb(39, 39, 39);
+
+            margin-bottom: 20px;
+            color: white;
+            background: rgb(92, 90, 90);
+            background: linear-gradient(90deg, rgba(92, 90, 90, 1) 14%, rgb(177, 177, 177) 100%);
+            border-radius: 10px;
+        }
+
+        .pagination-container p {
+            padding: 1em;
+            margin: 0;
+        }
+
+        .pagination-custom .page-item.active .page-link {
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(0, 0, 0);
+        }
+
+        .pagination-custom .page-item .page-link {
+            color: black;
+            background-color: white;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+
+        .f-button {
+            display: none;
+        }
+
+
+
+        @media(max-width: 1200px) {
+            .main2 {
+                width: 100%;
+            }
+
+            .main1 {
+                display: none;
+            }
+
+            .f-button {
+                display: block;
+            }
+
+            #filterSection {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: -400px;
+                background-color: rgb(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid black;
+                border-radius: 30px;
+                z-index: 9999;
+                padding: 20px;
+                width: 380px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                overflow-y: auto;
+            }
+
+            #filterSection.show {
+                left: 0;
+            }
+
+            .main {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            .main1 {
+                width: 350px;
+                background-color: rgba(207, 207, 207, 0.226);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 10px;
+            }
+
+            .heading {
+                width: 90%;
+                text-align: center;
+                color: black;
+                background: radial-gradient(circle, #bbbbbb 0%, #ffffff 100%);
+                border-radius: 30px 0px 30px 0px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                margin-left: 15px;
+            }
+
+
+            .main1:hover .heading {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .select {
+                width: 90%;
+                height: 50px;
+                font-size: large;
+                background-color: transparent;
+                color: rgb(0, 0, 0);
+                border: 0.25px solid rgb(0, 0, 0);
+            }
+
+            .select:hover {
+                color: rgb(22, 22, 22);
+            }
+
+            .main-select {
+                border: 0.25px solid rgb(255, 255, 255);
+                width: 90%;
+                height: 280px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-left: 17px;
+            }
+
+            .main-select:hover {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .slctt {
+                border-radius: 0px 0px 10px 10px;
+            }
+
+            .slct {
+                border-radius: 10px 10px 0px 0px;
+            }
+
+
+            .filter-sidebar {
+                width: 90%;
+                border-radius: 10px;
+                height: 880px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 15px;
+            }
+
+            .filter-sidebar:hover {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .filter-sidebar:hover .heading {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .filter-section h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: rgb(0, 0, 0);
+                margin-left: 40px;
+                margin-top: 10px;
+            }
+
+
+            .filter-sidebar:hover h3 {
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+                color: black;
+            }
+
+            .filter-section label {
+                display: block;
+                font-size: 14px;
+                font-weight: 700;
+                color: rgb(36, 36, 36);
+            }
+
+
+            .filter-section input[type="radio"] {
+                margin-right: 10px;
+                margin-left: 40px;
+            }
+
+            .filter-section .slider {
+                width: 70%;
+                margin-left: 40px;
+            }
+
+            .filter-section span {
+                display: block;
+                margin-top: 5px;
+                font-size: 14px;
+                margin-left: 40px;
+            }
+        }
+
+
+
+
+
+
+
+        .footer-section {
+            background-color: #85858534;
+            color: #ffffff;
+            background-image: url('https://www.euchips.com/uploads/footer_bg.jpg');
+            /* Parallax background image */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            /* Adjust as needed */
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section {
+            background-color: #b4b4b477;
+            color: #000000;
+            padding-top: 40px;
+            /* Increase space from the content above */
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section h2 {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .newsletter-section .form-control {
+            border-radius: 0;
+            border: 2px solid #000000;
+        }
+
+        .newsletter-section .btn-primary {
+            background-color: #000000;
+            border: none;
+            border-radius: 0;
+            color: #ffffff;
+        }
+
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #dcdcdc;
+        }
+
+        .footer-section ul {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-section .list-inline {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        .footer-section .list-inline i {
+            font-size: 24px;
+            /* Consistent icon size */
+        }
+
+        .footer-section .d-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section .text-center img {
+            margin-bottom: 20px;
+        }
+
+        .footer-section .text-start {
+            text-align: left;
+        }
+
+        .footer-section .text-end {
+            text-align: right;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .footer-section .col-md-4 {
+                text-align: start;
+                margin-bottom: 20px;
+            }
+
+            .newsletter-section {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+        /* Loader CSS */
+        .🤚 {
+            --skin-color: #E4C560;
+            --tap-speed: 0.6s;
+            --tap-stagger: 0.1s;
+            position: fixed;
+            /* Change to fixed to keep loader in view */
+            top: 50%;
+            /* Center vertically */
+            left: 50%;
+            /* Center horizontally */
+            transform: translate(-50%, -50%);
+            /* Adjust centering */
+            width: 80px;
+            height: 60px;
+        }
+
+        .🤚:before {
+            content: '';
+            display: block;
+            width: 180%;
+            height: 75%;
+            position: absolute;
+            top: 70%;
+            right: 20%;
+            background-color: black;
+            border-radius: 40px 10px;
+            filter: blur(10px);
+            opacity: 0.3;
+        }
+
+        .🌴 {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--skin-color);
+            border-radius: 10px 40px;
+        }
+
+        .👍 {
+            position: absolute;
+            width: 120%;
+            height: 38px;
+            background-color: var(--skin-color);
+            bottom: -18%;
+            right: 1%;
+            transform-origin: calc(100% - 20px) 20px;
+            transform: rotate(-20deg);
+            border-radius: 30px 20px 20px 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .👍:after {
+            width: 20%;
+            height: 60%;
+            content: '';
+            background-color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            bottom: -8%;
+            left: 5px;
+            border-radius: 60% 10% 10% 30%;
+            border-right: 2px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .👉 {
+            position: absolute;
+            width: 80%;
+            height: 35px;
+            background-color: var(--skin-color);
+            bottom: 32%;
+            right: 64%;
+            transform-origin: 100% 20px;
+            animation-duration: calc(var(--tap-speed) * 2);
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            transform: rotate(10deg);
+        }
+
+        .👉:before {
+            content: '';
+            position: absolute;
+            width: 140%;
+            height: 30px;
+            background-color: var(--skin-color);
+            bottom: 8%;
+            right: 65%;
+            transform-origin: calc(100% - 20px) 20px;
+            transform: rotate(-60deg);
+            border-radius: 20px;
+        }
+
+        .👉:nth-child(1) {
+            animation-delay: 0;
+            filter: brightness(70%);
+            animation-name: tap-upper-1;
+        }
+
+        .👉:nth-child(2) {
+            animation-delay: var(--tap-stagger);
+            filter: brightness(80%);
+            animation-name: tap-upper-2;
+        }
+
+        .👉:nth-child(3) {
+            animation-delay: calc(var(--tap-stagger) * 2);
+            filter: brightness(90%);
+            animation-name: tap-upper-3;
+        }
+
+        .👉:nth-child(4) {
+            animation-delay: calc(var(--tap-stagger) * 3);
+            filter: brightness(100%);
+            animation-name: tap-upper-4;
+        }
+
+        @keyframes tap-upper-1 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(0.4);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(0.4);
+            }
+        }
+
+        @keyframes tap-upper-2 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(0.6);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(0.6);
+            }
+        }
+
+        @keyframes tap-upper-3 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(0.8);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(0.8);
+            }
+        }
+
+        @keyframes tap-upper-4 {
+
+            0%,
+            50%,
+            100% {
+                transform: rotate(10deg) scale(1);
+            }
+
+            40% {
+                transform: rotate(50deg) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader HTML -->
+    <div class="🤚">
+        <div class="👉"></div>
+        <div class="👉"></div>
+        <div class="👉"></div>
+        <div class="👉"></div>
+        <div class="🌴"></div>
+        <div class="👍"></div>
+    </div>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="download.svg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa-solid fa-bars" style="color: white;"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <div class="navbar-center">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="form-control" type="search" placeholder="Search article" aria-label="Search">
+                        <i class="fa-solid fa-barcode"></i>
+                    </div>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Business Login</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            EN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">EN</a></li>
+                            <li><a class="dropdown-item" href="#">FR</a></li>
+                            <li><a class="dropdown-item" href="#">DE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Second Navbar -->
+
+    <div class="sec-nav">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Category
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="led.html">Led Lights</a></li>
+                                <li><a class="dropdown-item" href="tube.html">Tube Lights</a></li>
+                                <li><a class="dropdown-item" href="celling.html">Ceiling Lights</a></li>
+                                <li><a class="dropdown-item" href="wall.html">Wall Lights</a></li>
+                                <li><a class="dropdown-item" href="lamp.html">Lamp Lights</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback.html">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="faqs.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="review.html">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <button type="button" class="btn btn-primary contact" data-bs-toggle="modal" data-bs-target="#contactFormModal">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+
+    <div class="main-img-nav">
+        <div class="alert alert-dark alert-dismissible fade show text-center" role="alert" data-aos="zoom-in-up">
+            YOU ARE NOW <strong>CATEGORY</strong> PAGE.
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="filterSection">
+            <div class="main1" data-aos="flip-left">
+                <div class="main-one">
+                    <div class="ring">
+                        <button type="button" id="applyFiltersBtn" class="f-button btn btn-dark m-2 ml-auto"
+                            style="color: #ffffff; border-radius: 50%; font-weight: 900;">
+                            Exit
+                        </button>
+                        <h2 class="heading">LED Lights</h2>
+                        <div class="main-select">
+                            <select class="select slct">
+                                <option>Indoor Lighting</option>
+                                <option>Outdoor Lighting</option>
+                                <option>Smart Lighting</option>
+                                <option>Decorative Lighting</option>
+                            </select>
+
+                            <select class="select">
+                                <option>Ceiling Lights</option>
+                                <option>Wall Lights</option>
+                                <option>Floor Lamps</option>
+                                <option>Table Lamps</option>
+                            </select>
+
+                            <select class="select">
+                                <option>Spotlights</option>
+                                <option>Strip Lights</option>
+                                <option>Pendant Lights</option>
+                                <option>Chandeliers</option>
+                            </select>
+
+                            <select class="select slctt">
+                                <option>LED Bulbs</option>
+                                <option>LED Tubes</option>
+                                <option>Panel Lights</option>
+                                <option>Recessed Lights</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="heading">Filter By</h2>
+                    <div class="filter-sidebar">
+                        <!-- Filter Sections -->
+                        <div class="filter-section">
+                            <h3>Wattage</h3>
+                            <label><input type="radio" name="wattage" value="5w"> 5W (10)</label>
+                            <label><input type="radio" name="wattage" value="10w"> 10W (8)</label>
+                            <label><input type="radio" name="wattage" value="20w"> 20W (15)</label>
+                            <label><input type="radio" name="wattage" value="50w"> 50W (5)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Color Temperature</h3>
+                            <label><input type="radio" name="color-temp" value="warm-white"> Warm White (2700K)
+                                (12)</label>
+                            <label><input type="radio" name="color-temp" value="cool-white"> Cool White (4000K)
+                                (9)</label>
+                            <label><input type="radio" name="color-temp" value="daylight"> Daylight (6000K) (7)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Material</h3>
+                            <label><input type="radio" name="material" value="plastic"> Plastic (20)</label>
+                            <label><input type="radio" name="material" value="metal"> Metal (15)</label>
+                            <label><input type="radio" name="material" value="glass"> Glass (10)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Shape</h3>
+                            <label><input type="radio" name="shape" value="round"> Round (12)</label>
+                            <label><input type="radio" name="shape" value="square"> Square (8)</label>
+                            <label><input type="radio" name="shape" value="rectangular"> Rectangular (5)</label>
+                            <label><input type="radio" name="shape" value="linear"> Linear (7)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>IP Rating</h3>
+                            <label><input type="radio" name="ip-rating" value="ip20"> IP20 (Indoor) (20)</label>
+                            <label><input type="radio" name="ip-rating" value="ip44"> IP44 (Splash Resistant)
+                                (10)</label>
+                            <label><input type="radio" name="ip-rating" value="ip65"> IP65 (Water Resistant) (5)</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <input type="range" class="slider" min="0" max="1000" step="50" value="500" id="priceRange">
+                            <span>Price: $<span id="priceValue">500</span></span>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Voltage</h3>
+                            <label><input type="radio" name="voltage" value="12v"> 12V (Low Voltage) (10)</label>
+                            <label><input type="radio" name="voltage" value="110v"> 110V (15)</label>
+                            <label><input type="radio" name="voltage" value="240v"> 240V (10)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="main2" data-aos="flip-right">
+
+            <div class="container">
+                <div class="main-panel-img">
+                    <div class="panel-img">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="toggleFiltersBtn" class="f-button btn btn-dark mt-4"
+                style="color: #ffffff; width: 80%;">Filters</button>
+            <div class="container" data-aos="zoom-in-up">
+                <div class="product-sort text-center">
+                    <p>There are 19 products.</p>
+                    <div class="form-inline">
+                        <label for="sort" class="mr-2">Sort By:</label>
+                        <select id="sort" class="form-control mr-2">
+                            <option value="relevance">Relevance</option>
+                            <option value="price-low-high">Price: Low to High</option>
+                            <option value="price-high-low">Price: High to Low</option>
+                            <option value="newest">Newest Arrivals</option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid my-5" id="arrivals">
+                <div class="row">
+                    <!-- Example product card -->
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QDxAPDRAPDQ8NDw0NDw0PDQ8NDg0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4vFx8zOD84NygtLi0BCgoKDg0OGBAPGDUdFRktLS0tLSstLSsrLS0rLS0rKy0tLS0rLS0tLS0rLS0rLS0tKy0rLS0rLS0tLS03LTc3K//AABEIAL4BCQMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAACAAEDBAYFB//EADwQAAICAQIDBQUGAwcFAAAAAAECAAMRBCEFEjEGEyJBUSNSYXGSFDJygZGxgqHBBxUkMzRCYnSisrPh/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIhEBAQACAgIDAQADAAAAAAAAAAECEQMhMTIEEiIzE0GB/9oADAMBAAIRAxEAPwDiVrJ1WBXJlE4q7YNBJ0kaCToJFVBqIeIgIUlQYUaEIGsaO3lbfpNjw2rIBExCGdTQdqadIQmobZhlcKzEfpJ+u70f21Gj4qgVSTtgTGauzmY+kv8AEe1VGrJShzhRzEFWUkZx5/Oc1zD66o3uIsRRzGEojiEIwELEAmp6QswK4Ukz5izBzFmBizFmDmLMALMXNAJjZiAyY2YOYswAiYOYo0AeKKKAOIo0cRGeKICPiAZpJOshSTpOmuaJqxLCCQ1iWKxIq4kURyJIqxOslaLEaPGgCmV7SP7UfAGalzMr2l/zF+KZ/nNeH2Zcvqj4A/tvmMfzE16naY7gA9t8lz+hmxAhze58XqRiEYxxMmg1EPlj1rJeSIwqIxh4kbGIFGMHmizAHzFBzHzAHMbMWY0AeLMGPAHijCPAzx40eIHj4jCGogCUQ8RKIeIjZVZOkjUSRJ1VzRYrlukSrVL+nXpM8mkWK0g2rLlVe0j1CTPbTTmPBJktglZWycfpLiKIic7iPBu/sTNgqAUgsa3sHX0XedetMmbHs5w1Fw7gM3kDuFhM7jehcZZ2820fAu4ubltF45COYVPUM5Hvb+U6/LsPlN12g4ajqWUBXA6jbI9DMZZVjY9RmGWVyy78jHGSdKpMJBIrevy6yxWsVEWaUk5SPpklo1yNtNOdYJA8uald5TsjTUeIsxsxsxkfMfMHMWYAWYoMeAKPGigBCPBEIRGeEBBEIQBwJIoggQ1EVMaiHiMoh4kmyYhiAIYnY5lihp19GmZxEOJ3uEnmxMc2mDsaenaVtZVidzS0eGUeJ14zMWrHcctKVOVJBxsRsRMmmutyPaP1H+4zQ9pbsqwHpMqnX8x+87eGfly8t/XT0nhSczZM2nDjtMfwY5xNhoF2nH/t03wl152mR4pV1YTWa4bTLcWbAPxzC+RPDzHWWnvLNyPaP5n3jNP2cYmlcnO79cn/AHGZjVUsXsPKxHO+/KcfePnNF2XfChT6n952c/pNObi9+2v0VcvWVbQeG1dJ0r6fDOJ1Mzq03nNvM6/Edszh2Pky8U5FGjZilEeKNFAHjxoogePGjiAFHEYQhEZxDAjCGogZ1EkURlEkUSQJRDxEoh4iUxwhCLEU63IkWdHhtxRgeo8xOYDJa9QV+MnKbi5dPU+Gcr1hhuDOD2o1QTKL949fgJg6+3OqpLLWKwoJHR8kZ+clo45ZqQC6qGYkEgnH85OXDljJaePLjbdCPD31Dd3XnmY9fTfqZ39d2S1Hcrm6uzl5SyDS6etiB5B1QGW+ztQTfzPUzTWW+GZ5ctnUaTCeaxWgHKR5EbYm34Owdcj8x6TM62sBuYes5mt7WvonQJULOdSTmwpjBxjGDDjlyvQzsk7b3iZCqSZi9dmxsAZycASvo+2T62wo9Qr5ULgiwtvzAYxyj1nW0KjmDHrFybxvZ8fcBoOyjLSwGq1FZfmbkrtda1JOegMzX92nTN3Z6rjDdeb45noyXeGZ3jiB8+o6SceS71TuEXezV4sGD94dR/WaHVVgKT8J5jbxg6Qd6oJZSoA5uXOTjrgx9R/aLZfy1NTyB2VGK2+ROM/d/lNseK2WyMsuSSyWuhxjUhnIX7oPX1nMYx2tzAzFIdohHg5izGDxRo8QPHEaOIGIRxBhgRA4hARhDAiMSiSAQVElURUzqJKojKIaiTTOBCjgR5KmQIjSRxAna5DSLUNgSU+sqapo5CtZu77zfiP7zRdmk8IP/IzPWjxN8z+803ZsezX8TfvNfkekZ8Hs2vDbMYnZa/wzP6Fp0Gs2nm2dvQgL2mB7Zn26/BP6zcM20w3bNfbofWv+s3+N7sef0N2PP+J+dbD+YnoFDbief9j/APUn4Vk/9wm+Q4i+T7nwejpC3wzla985lsWbYnM1j9ZzyNbWW7Vf5X8S/vMvpz7RPxr+80vahvZH8SzMUffT8S/vPT4f51wcvu2tJ2kmZX0p8A/KTTmdAsx4IjxAUeCIQgZxHEYQhEDiGIIhqIjEBJFEFRJVERnUSVRBUSVRJqhKIQjASQCTTIR8RhHxEbKWCRGWL5XM7I5APK9iFjgeZk7zqdn+HC2wM48CnOPWVcvrNlJu6R8D7Fai6trO705VixQ3C0MflysNvygaPhdmnzXaOV1ZiQAQACdsT1nRMAgA2wMYnB7S6MWDmH3l6H+kyz5LZ20wwkvTNaZsS+HnNpU5x5iXK8zGxtKJhKtvZ9dVYvPW1pUEYWw14Xr1wZfoQscCa7hFC1rt1PU+pjw3vpOevr2wVfZpNLazLW9RK8uGtNoIznY4HoJfE2HFaQ6kH8j6GZO6oqcGHJv7d3Z8d/PQHfaUNQ0s2Z+P6Sld6SZFWuHxfRvaoVAWJZTyg4J3Gw2lfiPZp6e6Yae6rLKS1l62rj0AFS4P5z0Xsxw9VIscAvjbP+0TQcSqWyso4BBHQzfHkyk68McsJb28j0yFRiTS5xPRd05XqM7H4SpCXY8FCEGOIAQhCCIQiMQhCMIaiIzqJIogqJKoipnAkiiMBDUSaYwIaiMBDAkmICHiCJIJJmijx4Bk7j5mVmaC9hMZd53SOTY605iJreCgLgTOaVJoOGtuJly3bXjjYaa3wyjxGzIMam3aVNXb1mNrSTtjO2RK0jlJBNq7g48mmb4RqLPtFXjcjnXYu2Joe2ZzUo6+1H/i0znCqz39WQR4vT4GdnHJ/iv/AFzcn9I9U4WnnNPpOky/CbM7TVaVdpycfl0cng2qO0zPGB4WPorfsZptWNjMnx23COB7rfsY8vYYerygWNj7zfUZuuALzVVFt/Zr138phmpbAPK3TrynE3fZ8+wq/As6Pk+Ix4PNbDhz4xL+os2nG0Vkt3W7Tk26LO3C43WGzM464OJoNe/iPwnG1KzTBOStCEGEJaBCEBGEMCI4cCSKIIElUSTOokiiJRJAIlHAhqIKiSKJJiUQwIyw8SaZCGBGEfMkHEUUeAYXEkrWCknrE9C1yRZonY0LTkUzp6Vphk2xdut9pW1DwUs2iRC7AeUyaFoOAjVMC+VRWDcwJViR6YnW412UrKq9bWFq9wr2M6nb4zp8MAUADyl3UPtKxv5ZZb+zD0ZRh5ETZcI1CuvxHUTOcVo8XMPzmU4x2rv0t/d1LWQERssH5snPoRHxS3LpXLr69vSuM6kIMDdj5TKnTNexTrzZBPkB5zk8B7RXazvO9VF5OTHJzb5znOSfSa/hNYXfzPUyeTcy1fJ8evr0EdkKPs/dB7R4cZFzgfLGek4B0RoPdkY5dhjoRN53nhnC4vUG38xDO+C4997c3TWSw9so1nEN7JLRT1x3M5l0vapt5QsM0xRkrMI4jtEBLQICSKIKyRRJpiUSVRAUSVBFVQaiSARhDAkUyAhrBxCURGkWGIKwhJM8eNHEQOIohFiAYlFllBBVJOiTt25dDqEu0mVkWWaxM60i7UZf0u051Uu0NMsmsd/RWSzfZtOXpbMSxZZkSJehZ2paxszyztef8Y/4K/2npmraeX9rGzq2/BX+06fie7H5Pq7H9n53u/gH7z0XRv0nnHYM/wCb+JB/IzfaZ5l8j+lacP8AOO4bdpy9Y8n7zac/UvMrdrk0pXdZXd5Pa0qWGXBVe8ynZLN5lVzNcWdRmEogw1lJGokqiCokyrIqoSiSKIgsICKmMSQQFkgk1R8RxFEIgNIYgLJBJpkI8aEIgaPFFAMsoliquRVjedPTUTqtc8QCuSKstGmRssm1UOhlmlpT5hJ6nkVpHTqeWBZtKFTiTNbgTPSkOrac2jsOdZY1zFVVlVcsG6jbbBnV01PeNg9PObHRYVQBsANh8Jtw9Vly3p5zpezLaF3U4KuwZSueXAHx851qGmn4tUtikH8vgZliOVsHykck/S+O/leNm0oXvJWsGJUusEiRaG1pWdoVryAvNJE1FcZXaSWtv/8AZCzD1mkZ00kSR5EkQiOksViWEWRUy0gmdXDcsREmCwWEWzAsmUSISauKmcLERJQIzCSArJAIAkqxUwxwIWIQEQCBFiSAR8QDW8A06HR6UlEJOm05JKgknu1nQFCe6v0iU+z3+j0v/S6b/wBSzoT2tPJR9wnur9Ii7hPcX6RJIotBF9nr9xPpEX2dPcT6RJYoaG0fcJ7i/SIu5T3V+kSSKGoNgFKeSqP4RH5R6D9IUaGg5eq4zp0ZQzLhrHqZ8eGt1RmOTj/ifl5xaji2kQoCVc2sVXkr7zGBYcnA6eycfMRXcCpc2MxsJt7wMOYKAHrZDgAejnc79N9hBq7PUq4dWtBVw6+MYQZtPIBj7vt7Pj4uuww9DZ6uL6NkV+atQ1a24dOVghxjIx13G3xETcU0gKDKkO1iBxWeRWRSzczYwMYP6H0MCns5p1ORzk8tSknkLN3fLyEty52CKOuMD13kl3AqXLlzYe8d3YcwAIZGRlwB0IY79em+0WoNg1HFtItbOvd2cqs3IFAbAODnI8P54ll79MFRz3XLa3LW3KDznBPhwN9gTn0Gekqns7QRZzNa32hSuoLMp+0joOcYxsNtsbdZP/dCctah7VFB9lysua0IIKAkbrynG+egxuMw0No24noR1ejqR90fDfp03G/TeWqjp3CFRURYCU8KguB1wDvtKlPZ6hTkd4SEWpSXzy0qylKxt0HKMee5zL+m0iVqqqPumwqTuwLsWbf5mPQcu7i2mXnHcuTVZZWyihQ3Kla2PYAcZQK6/E52B2le/tHokUO1TcjEGtu6qC21kORYhJ3Hs22+8dsA5Gb1vAq3axme4m12diGRcBq1rZBhR4SiIPXwg9d5E/ZnTkYBtXAatOWzArpYOGqUY2Uh2+IyMHYYNBC3aDSAXkVMfsrFbMV1DABcFjlvDvW2zYJ2wDkZs3cTpVbmGnscaYgWYrqrPLyc3OO8Zcr5fOMOzlIDBXuQMGTC27LUxctWNt1JduuTvsRgSccITL5exlsaljWSgQd0RyKMLnHhHUnOIaG1J+PacIzmiwBVdxzV1IHWtuW0glgByNseYjqMZyJ2Kq62UMEXDAMMoAcEZ3BG0oNwKrLFXuQnvOXlswKlsYtYqgjGGJyc58sYwJ0qKlRFRBhUVUUbnCgYA/SLQ2X2dPcT6RF3Ce4v0iSRQ0No+4T3V+kRdynur9IkkUNQbR9wnur9Ii7lPdX6RJIoag2j7lPdX6RF3Ke6v0iSRQ1BtH3Ke6v0iLuU91fpEkihqDb/2Q=="
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Wall Lamp Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light.pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,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"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">fancy Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light (1).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,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"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Bedroom Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light (2).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,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"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">sceanry Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light (3).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,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"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Lantern Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light (4).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-left">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,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"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Bird Wall Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light (5).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMQEhUQExMWFhEVGBgZGBYWFRcSGRgZFRUXFhUXFhcYHSggGBolGxoVIzEhJik3Li4uGB8zODMsNygtLisBCgoKDg0OGxAQGyslHyYrNS03LzU3LS8tLS0rMi03NS0wLy0tLS0vLTUtLy0tNS0tLS8vLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAwADAQAAAAAAAAAAAAAABAUGAQMHAv/EADwQAAICAQMCAwcCAwcCBwAAAAECABEDBBIhBTEiQVEGE2FxgZGhMkIjscEkUmKCkqLRwvAHFFNystLh/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECBAMF/8QAKREBAAMAAgIABAUFAAAAAAAAAAECEQMhEjETIkHwBCNRofFCYXGBwf/aAAwDAQACEQMRAD8A9oiIkhERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQESNn1AWVnX/aBdLh3d8jgjGvi5IHclQaAsQLyJU+znVRqMXnvSg1hue4DAsBd0ZbQEREBERAREQEREBERAREQEREBERAREQEREBERAREQE68mQCc5XoTP63Xm6gdXV9ZtIs9zX1My3tLqw+TGhrwKxv6ofydn2nHWdTuykFjXAAoUpHO665JJr4bZX6HRnVapEYkKysSVoed18OwlZtic1svZfXhchZ2AXJjLbiQovduXnt2YzUaPWJmBZGDAMVsEEcfKee6zCdM6jG7ApSg7rIBFH4dj6Tt9ls3u82JkJC5D7t14IbzUni73M33kVtuJmMeixES6pERAREQEREBERAREQEREBERAREQEREBERARE+XeoEbqD0pmS1T8kntND1LUAgzF5eo43bJjJNAcmivBtSee/wAx8JEzEJiNVAb3vvsn90Eg9uzLX9Z1ezeUNmQMSFG4EhipCtXYg2O/l6SPodWrk4xYLqaHPbng8enl8584sTYbZRZyWi/AqFZm+VEfWZ7cneO1adavMuQPn2A2o55JJpQALJ5PlyZy2cY3QgdvF9VO4fyqdHs+v8Vtwp2WvhtNsPqKIM+utHZkVQBYANepJNgn9orzPrIrfJxNqbGvWFawCOx5H1nMySe12ILp68CMQDZBbagKmx5c1zdm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REBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERA//2Q=="
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Sorento Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light (6).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="flip-right">
+                        <div class="product-card text-center p-3">
+                            <span class="badge badge-new">Wall Light</span>
+                            <img src="data:image/jpeg;base64,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"
+                                alt="LED Light 1" class="img-fluid mb-3">
+                            <h5 class="product-title">Golden Light</h5>
+                            <div class="product-rating mb-2">
+                                <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            </div>
+                            <p class="product-price"><del>$80</del> $60</p>
+                            <!-- PDF Download Button -->
+                            <a href="lucide wall light (7).pdf" class="btn btn-download" download><i
+                                    class="fa-solid fa-circle-down"></i></a>
+                        </div>
+                    </div> <!-- closes the .container-fluid -->
+                </div> <!-- closes the .main2 -->
+            </div> <!-- closes the .main -->
+
+
+
+
+            <div class="container" data-aos="zoom-in-up">
+                <div class="pagination-container">
+                    <p>Showing 1-12 of 19 item(s)</p>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-custom">
+                            <li class="page-item mt-3 active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item mt-3"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item mt-3 mr-2"><a class="page-link" href="#">></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- Contact Form Modal -->
+    <div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="contactFormModalLabel">Contact Us</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="contact-name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="contact-name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="contact-email" placeholder="Your Email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-message" class="form-label">Message:</label>
+                            <textarea class="form-control" id="contact-message" rows="4" placeholder="Your Message"
+                                required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline-dark">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer-section py-5">
+        <div class="container text-center">
+            <img src="download.svg" alt="Logo" class="img-fluid mb-4 footer-logo">
+        </div>
+        <section class="newsletter-section text-center py-4">
+            <div class="container">
+                <h2 class="mb-3">Subscribe to our Newsletter</h2>
+                <form class="d-flex justify-content-center">
+                    <input type="email" class="form-control w-50 me-2" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+        <div class="container text-start">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Customer Care</strong></li>
+                        <li><a href="contactus.html" class="text-white">Contact Us</a></li>
+                        <li><a href="faqs.html" class="text-white">FAQs</a></li>
+                        <li><a href="feedback.html" class="text-white">Feedback</a></li>
+                        <li><a href="#" class="text-white">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Why Shop With Us</strong></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Bespoke Services</a></li>
+                        <li><a href="#" class="text-white">Ideas & Advice</a></li>
+                        <li><a href="#" class="text-white">Guarantee</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Info</strong></li>
+                        <li><a href="#" class="text-white">Privacy</a></li>
+                        <li><a href="#" class="text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white">Delivery Information</a></li>
+                        <li><a href="#" class="text-white">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <ul class="list-unstyled">
+                        <li><strong>Contact Us</strong></li>
+                        <li><a href="mailto:support@ultraleds.co.uk" class="text-white">E: support@ultraleds.co.uk</a>
+                        </li>
+                        <li><a href="tel:08000883300" class="text-white">T: 0800 088 3300</a></li>
+                        <li><span class="text-white">(8:30am-5:00pm GMT Mon-Fri)</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mt-4">
+                <ul class="list-inline text-start mb-0">
+                    <li class="list-inline-item"><strong>Follow Us</strong></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+                <ul class="list-inline text-end mb-0">
+                    <li class="list-inline-item"><strong>Payment Methods</strong></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-visa"></i></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-mastercard"></i></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-stripe"></i></li>
+                    <li class="list-inline-item"><i class="fa-brands fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        window.addEventListener("load", function () {
+            document.querySelector(".🤚").style.display = "none";
+        });
+    </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        offset: 300
+    });
+  </script>
+    <script>
+        document.getElementById('toggleFiltersBtn').addEventListener('click', function () {
+            document.getElementById('filterSection').classList.toggle('show');
+        });
+
+        document.getElementById('priceRange').addEventListener('input', function () {
+            document.getElementById('priceValue').textContent = this.value;
+        });
+
+        document.getElementById('applyFiltersBtn').addEventListener('click', function () {
+            document.getElementById('filterSection').classList.toggle('show');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+        integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzbgDF5f4Q5h5p+8XVlvO5veAEZerfxOHnE0J+EDZ7HkQroLhB6SN0I5S1NPAQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
